@@ -1,7 +1,10 @@
+import Header from "./components/Header";
+
 function App() {
+  const name = "Mohammad Reza";
   return (
-    <div className="App">
-      <h1>Hello from React</h1>
+    <div className="container">
+      <Header title="reza" />
     </div>
   );
 }
