@@ -1,9 +1,13 @@
 import { useState } from "react";
+import DateFnsUtils from "@date-io/date-fns";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import "date-fns";
+import { DateTimePicker } from "@material-ui/pickers";
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
-  const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
+  const [day, setDay] = useState(new Date());
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -31,12 +35,21 @@ const AddTask = ({ onAdd }) => {
       </div>
       <div className="form-control">
         <label>Day & time</label>
-        <input
-          type="text"
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <DateTimePicker
+            disableToolbar
+            variant="inline"
+            value={day}
+            onChange={setDay}
+            autoOk
+          />
+        </MuiPickersUtilsProvider>
+        {/* <input
+          type="date"
           placeholder="Add Day & Time"
           value={day}
           onChange={(e) => setDay(e.target.value)}
-        />
+        /> */}
       </div>
       <div className="form-control form-control-check">
         <label>Set Reminder</label>
