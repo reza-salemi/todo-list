@@ -40,16 +40,12 @@ const AddTask = ({ onAdd }) => {
             disableToolbar
             variant="inline"
             value={day}
-            onChange={setDay}
+            onChange={(day) => {
+              setDay(day);
+            }}
             autoOk
           />
         </MuiPickersUtilsProvider>
-        {/* <input
-          type="date"
-          placeholder="Add Day & Time"
-          value={day}
-          onChange={(e) => setDay(e.target.value)}
-        /> */}
       </div>
       <div className="form-control form-control-check">
         <label>Set Reminder</label>
