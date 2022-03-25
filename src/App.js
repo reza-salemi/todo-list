@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
+import TaskFilter from "./components/TaskFilter";
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -64,7 +65,9 @@ function App() {
         onAdd={() => setShowAddTask(!showAddTask)}
         showAdd={showAddTask}
       />
+
       {showAddTask && <AddTask onAdd={addTask} />}
+      <TaskFilter />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (

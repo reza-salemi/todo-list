@@ -110,3 +110,25 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+
+.tasks-filter {
+  padding: 0 0.6rem;
+}
+
+.tasks-filter__control {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.tasks-filter label {
+  font-weight: bold;
+}
+
+.tasks-filter select {
+  font: inherit;
+  padding: 0.5rem 0.2rem;
+  border-radius: 6px;
+}
