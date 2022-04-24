@@ -9,7 +9,7 @@ const TaskFilter = (props) => {
         <select value={props.selected} onChange={dropDownChangeHandler}>
           <option value="all">All</option>
           <option value="active">Active</option>
-          <option value="uncompelete">Uncompelete</option>
+          <option value="compeleted">compeleted</option>
         </select>
       </div>
     </div>

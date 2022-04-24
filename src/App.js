@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Tasks from "./components/Tasks";
-import AddTask from "./components/AddTask";
-import TaskFilter from "./components/TaskFilter";
+import Header from "./components/UI/Header";
+import Tasks from "./components/Tasks/Tasks";
+import AddTask from "./components/NewTask/AddTask";
+import TaskFilter from "./components/Tasks/TaskFilter";
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
