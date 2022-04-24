@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
+import styles from "./Button.module.css";
 
-const Button = ({ color, text, onClick }) => {
+const Button = ({ color, text, onClick, type }) => {
   return (
     <button
+      className={styles.btn}
+      type={type || "button"}
       onClick={onClick}
       style={{ backgroundColor: color }}
-      className="btn"
     >
       {text}
     </button>

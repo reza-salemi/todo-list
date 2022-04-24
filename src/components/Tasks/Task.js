@@ -1,4 +1,6 @@
 import { FaTimes } from "react-icons/fa";
+import styles from "./Task.module.css";
+
 const Task = ({ task, onDelete, onToggle }) => {
   const filterDate = (date) => {
     if (date.includes("T")) {
@@ -9,9 +11,11 @@ const Task = ({ task, onDelete, onToggle }) => {
         hour: "numeric",
         minute: "numeric",
       };
+
       const formatDate = new Date(date)
         .toLocaleString("en-US", options)
         .split(",");
+
       const newDate = formatDate.splice(0, 2) + " at" + formatDate.at(-1);
       return newDate;
     } else {
@@ -20,7 +24,7 @@ const Task = ({ task, onDelete, onToggle }) => {
   };
   return (
     <div
-      className={`task ${task.reminder ? "reminder" : ""}`}
+      className={`${styles.task} ${task.reminder && styles.reminder}`}
       onDoubleClick={() => onToggle(task.id)}
     >
       <h3>

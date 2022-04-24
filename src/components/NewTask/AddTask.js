@@ -3,6 +3,8 @@ import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import "date-fns";
 import { DateTimePicker } from "@material-ui/pickers";
+import styles from "./AddTask.module.css";
+import Button from "../UI/Button";
 
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
@@ -22,8 +24,8 @@ const AddTask = ({ onAdd }) => {
     setReminder(false);
   };
   return (
-    <form className="add-form" onSubmit={onSubmit}>
-      <div className="form-control">
+    <form className={styles["add-form"]} onSubmit={onSubmit}>
+      <div className={styles["form-control"]}>
         <label>Task</label>
         <input
           type="text"
@@ -32,7 +34,7 @@ const AddTask = ({ onAdd }) => {
           onChange={(e) => setText(e.target.value)}
         />
       </div>
-      <div className="form-control">
+      <div className={styles["form-control"]}>
         <label>Day & time</label>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <DateTimePicker
@@ -46,7 +48,9 @@ const AddTask = ({ onAdd }) => {
           />
         </MuiPickersUtilsProvider>
       </div>
-      <div className="form-control form-control-check">
+      <div
+        className={`${styles["form-control"]} ${styles["form-control-check"]}`}
+      >
         <label>Set Reminder</label>
         <input
           type="checkbox"
@@ -56,7 +60,7 @@ const AddTask = ({ onAdd }) => {
         />
       </div>
 
-      <input className="btn btn-block" type="submit" value="Save Task" />
+      <Button type="submit" text="Add Task" />
     </form>
   );
 };
